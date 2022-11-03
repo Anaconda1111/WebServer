@@ -60,11 +60,11 @@ void Client::init(){
 
 int Client::closeConnection(){
     if(socket_fd!=-1){
+        epoll_remove(epoll_fd,socket_fd);
         close(socket_fd);
         Logger::Info("Client.closeConnection socket_fd=%d,port=%d",socket_fd,port);
         socket_fd=-1;
         close_mmap();
-        epoll_remove(epoll_fd,socket_fd);
         timer_ptr->StopTimer(timer_id);
         timer_id=-1;
     }

@@ -18,7 +18,7 @@ namespace Config{
 
     const std::string log_file_path ="/mnt/hgfs/share/WebServer/log.txt";
 
-    const unsigned int client_timeout_check_nums=5;
+    const unsigned int client_timeout_check_nums=20;
     const unsigned int client_timeout_check_continue_threshold=4;
 };
 
